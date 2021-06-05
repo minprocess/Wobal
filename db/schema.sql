@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS woral_db;
+CREATE DATABASE woral_db;
