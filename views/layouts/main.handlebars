@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Wobal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/a82bb2b66e.js" crossorigin="anonymous"></script>
+        <link href="/static/css/2.1de125a5.chunk.css" rel="stylesheet">
+        <link href="/static/css/main.fd419035.chunk.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Wobal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Feed</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Search Friends</a>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fal fa-bell fa-fw notification-icon link-with-unread"
+                            aria-label="Toggle notifications, 0 new messages" role="button" aria-hidden="true"
+                            aria-expanded="false"></i>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    {{#if logged_in}}
+                    <a href="/profile">profile</a> |
+                    <button class="no-button" id="logout">logout</button>
+                    {{else}}
+                    <a href="/login">login</a>
+                    {{/if}}
+                </form>
+            </div>
+        </div>
+    </nav>
+    <main class="container container-fluid mt-5">
+        {{{ body }}}
+      </main>
+      <footer>
+        
+      </footer>
+  
+
+
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+        <script src="/static/js/2.d32ecaa8.chunk.js"></script>
+        <script src="/static/js/main.2aace08e.chunk.js"></script>
+    <script src='./assets/script.js'> </script>
+
+</body>
+
+</html>
