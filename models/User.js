@@ -20,6 +20,14 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    fullname: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -34,6 +42,10 @@ User.init(
       validate: {
         len: [8],
       },
+    },
+    profile_pic: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
   },
   {
