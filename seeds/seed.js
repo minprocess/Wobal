@@ -1,9 +1,10 @@
 const sequelize = require('../config/connection');
-const { User, Posts, Comment } = require('../models');
+const { User, Posts, Comments } = require('../models');
 
 // Need to add routes
 const userData = require('./userData.json');
 const postData = require('./PostData.json');
+const commentData = require('./CommentData.json');
 
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
@@ -15,8 +16,8 @@ const seedDatabase = async () => {
     }); 
     console.log('\n----- USER DATA SYNCED -----\n')
 
-    // await Comment.bulkCreate(commentData, {}); 
-    //   console.log('\n----- COMMENTS DATA SYNCED -----\n')
+    await Comments.bulkCreate(commentData, {}); 
+      console.log('\n----- COMMENTS DATA SYNCED -----\n')
   
     await Posts.bulkCreate(postData, {}); 
       console.log('\n----- POST DATA SYNCED -----\n')
