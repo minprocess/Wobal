@@ -1,0 +1,71 @@
+<div class="jumbotron jumbotron-fluid" style="border: 1px black solid; margin: 1% 2%; padding: 4%;">
+  <div class="container">
+    <div class="card mb-3" style="max-width: 100%; min-height: 100%;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="..." alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{{user.fullname}}}</h5>
+            <p class="card-text">{{{user.description}}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="display: flex; justify-content: center; margin-top: 1%;">
+  <div style="border: black solid 1px; width: 50%; padding: 1%;">
+    <div class="row mt-4" style="display: flex; justify-content: center;">
+      <div class="col-md-6">
+        <h3 style="font-size: 40px;">Create a Post:</h3>
+
+        <form>
+          <div class="form-group">
+            <label for="post-name" style="font-size: 35px;">Post Title</label>
+            <input class="form-input" type="text" id="post-name" name="post-name" />
+          </div>
+          <div class="form-group">
+            <label for="post-description" style="font-size: 35px;">Description:</label>
+            <textarea class="form-input" id="post-description" name="post-description"></textarea>
+          </div>
+          <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+            <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0">
+            <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose
+              file</label>
+            <div class="input-group-append">
+              <label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <i
+                  class="fa fa-cloud-upload mr-2 text-muted"></i><small
+                  class="text-uppercase font-weight-bold text-muted">Choose
+                  file</small></label>
+            </div>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Create</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#if posts.length}}
+<div class="jumbotron jumbotron-fluid" style="border: 1px black solid; margin: 1% 20%; padding: 4%; height: 70vh;">
+  <div class="container">
+
+    {{#each posts as |post|}}
+    <div class="card spacing" style="width: 100%;">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{{posts.name}}}</h5>
+        <p class="card-text">{{{post.descriptionription}}}</p>
+        <small>Date Posted: {{{posts.date_created}}}</small>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+</div>
