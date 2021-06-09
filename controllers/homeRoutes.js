@@ -4,14 +4,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    const postsData = await Posts.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
+    const postsData = await Posts.findAll();
 
     const posts = postsData.map((posts) => posts.get({ plain: true }));
 
@@ -56,7 +49,7 @@ router.get('/profile', withAuth, async (req, res) => {
     const user = userData.get({ plain: true });
 
     res.render('profile', {
-      ...user,
+      user,
       logged_in: true
     });
   } catch (err) {

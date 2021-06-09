@@ -1,17 +1,23 @@
 [
     {
+      "fullname": "Alex Bradshaw",
       "username": "alexbr",
       "email": "alexbr@hotmail.com",
-      "password": "password12345!"
+      "password": "password12345!",
+      "description": "i work at a chicken place"
     },
     {
+      "fullname": "Michael DiSanto",
       "username": "mdis",
       "email": "mdis@gmail.com",
-      "password": "password12345!"
+      "password": "password12345!",
+      "description": "Accountant"
     },
     {
+      "fullname": "Bill Pate",
       "username": "bpate",
       "email": "bpate@aol.com",
-      "password": "password12345!"
+      "password": "password12345!",
+      "description": "C# programmer"
     }
   ]
