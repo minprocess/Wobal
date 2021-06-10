@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Posts , User } = require('../models');
+const { Posts , User, Comments } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -42,6 +42,26 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+// To create a post
+router.post('/', async (req, res) => {
+  try {
+    const postsData = await Posts.create (req.body);
+    res.status(200).json(postsData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+// To add a comment
+router.post('/', async (req, res) => {
+  try {
+    const commentData = await Comments.create (req.body);
+    res.status(200).json(commentData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
 
 module.exports = router;
