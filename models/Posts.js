@@ -1,6 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+// badwords code. Please see npmjs for Usage
+const badwordsArray = require('badwords/array');
+
 class Posts extends Model {}
 
 Posts.init(
@@ -33,6 +36,14 @@ Posts.init(
         model: 'user',
         key: 'id',
       },
+    },
+  },
+  {
+    hooks: {
+      beforeCreate: async (newPostsData) => {
+        if ((newPostsData.description).includes(badwords))
+        newPostsData.description = await badwordsArray.newPostsData
+      }, 
     },
   },
   {
