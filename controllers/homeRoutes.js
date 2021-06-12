@@ -5,11 +5,19 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     const postsData = await Posts.findAll();
+    console.log("    ")
+    console.log("posts")
+    console.log(postsData)
 
     const posts = postsData.map((posts) => posts.get({ plain: true }));
 
+
+
+    const commentsData = await Comments.findAll();
+    const comments = commentsData.map((comments) => comments.get({ plain: true }));
+
     res.render('homepage', { 
-      posts, 
+      posts,
       logged_in: req.session.logged_in 
     });
   } catch (err) {
