@@ -31,7 +31,7 @@ Github users: mdis928, alexbradshaw, minprocess
 
 
 ## Test
-To perform a test, please make sure the dependencies are installed. Once you have them installed, you should be able to do "node server.js" in the terminal. Then go to your browers and connect to local host. You should see your application. You can test the functionality and if something is wrong, play around with the code so you can get the functionality down right. If you want test the GET, POST, PUT, and DELETES routes, you can use insomnia 
+To perform a test, please make sure the dependencies are installed. Once you have them installed, you should be able to do "node server.js" in the terminal. Then go to your browsers and connect to local host. You should see your application. You can test the functionality and if something is wrong, play around with the code so you can get the functionality down right. If you want test the GET, POST, PUT, and DELETES routes, you can use insomnia 
 
 ## Questions
 Please contact us via github mdis928, alexbradshaw, minprocess
