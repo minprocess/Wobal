@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Posts, Comments  } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
@@ -55,6 +55,48 @@ router.post('/logout', (req, res) => {
     });
   } else {
     res.status(404).end();
+  }
+});
+
+// To create a post
+router.post('/post', (req, res) => {
+    Posts.create({
+      photo: req.body.photo,
+      name: req.body.name,
+      description: req.body.description,
+      user_id: req.session.user_id
+    })
+      .then(newPost => res.status(200).json(newPost))
+      .catch(err => {
+        console.log(err)
+        res.status(400).json(err)
+      
+      })
+
+});
+
+// To create a comment
+router.post('/comment', async (req, res) => {
+  try {
+    const commentData = await Comments.create(req.body);
+    res.status(200).json(commentData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+// To create a user
+router.post('/newuser', async (req, res) => {
+  try {
+    console.log(req.body);
+    User.create({
+      email: req.body.email,
+      password: req.body.password
+    })
+      .then(newUser => res.status(200).json(newUser))
+      .catch(err => res.status(400).json(err))
+  } catch (err) {
+    res.status(400).json(err);
   }
 });
 

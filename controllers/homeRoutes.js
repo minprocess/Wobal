@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Posts , User, Comments } = require('../models');
+const { Posts, User, Comments } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -16,9 +16,9 @@ router.get('/', async (req, res) => {
     const commentsData = await Comments.findAll();
     const comments = commentsData.map((comments) => comments.get({ plain: true }));
 
-    res.render('homepage', { 
+    res.render('homepage', {
       posts,
-      logged_in: req.session.logged_in 
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
@@ -50,36 +50,6 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
-});
-
-// To create a post
-router.post('/', async (req, res) => {
-  try {
-    const postsData = await Posts.create (req.body);
-    res.status(200).json(postsData);
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
-
-// To create a comment
-router.post('/', async (req, res) => {
-  try {
-    const commentData = await Comments.create (req.body);
-    res.status(200).json(commentData);
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
-
-// To create a user
-router.post('/', async (req, res) => {
-  try {
-    const userData = await User.create (req.body);
-    res.status(200).json(userData);
-  } catch (err) {
-    res.status(400).json(err);
-  }
 });
 
 module.exports = router;
