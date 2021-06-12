@@ -5,12 +5,6 @@ class Posts extends Model {}
 
 Posts.init(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
     photo: {
       type: DataTypes.STRING,
       allowNull: true,

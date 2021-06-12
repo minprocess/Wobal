@@ -2,9 +2,9 @@ async function newFormHandler(event) {
     event.preventDefault();
     const name = document.getElementById('name-signup').value;
     const email = document.getElementById('email-signup').value;
-    const password = document.getElementById('#password-signup').value;
+    const password = document.getElementById('password-signup').value;
 
-    const response = await fetch(`/api/dish`, {
+    const response = await fetch(`/api/users/newuser`, {
         method: 'POST',
         body: JSON.stringify({
             email,
