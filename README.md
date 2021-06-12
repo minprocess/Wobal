@@ -12,7 +12,7 @@ For this project, we are required to create our first full application. Our team
 * [Tests] (#tests)
 * [Questions] (#questions)
 ## Installiations
-bcrypt, connect-session-sequelize, dotenv, eslint, express, express-handlebars express-session, mysql2, nodemon, sequelize,
+bcrypt, connect-session-sequelize, dotenv, eslint, express, express-handlebars express-session, mysql2, nodemon, sequelize, insomnia (testing routes)
 
 ## Usage
 Insert screenshots here
@@ -27,9 +27,11 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Contributing
+Github users: mdis928, alexbradshaw, minprocess 
 
 
 ## Test
+To perform a test, please make sure the dependencies are installed. Once you have them installed, you should be able to do "node server.js" in the terminal. Then go to your browers and connect to local host. You should see your application. You can test the functionality and if something is wrong, play around with the code so you can get the functionality down right. If you want test the GET, POST, PUT, and DELETES routes, you can use insomnia 
 
 ## Questions
-Please contact us via github mdis928, 
+Please contact us via github mdis928, alexbradshaw, minprocess
