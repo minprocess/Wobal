@@ -5,12 +5,12 @@ https://github.com/alexbradshaw/Wobal
 For this project, we are required to create our first full application. Our team decided to create a social media site called Wobal for only your close friends and family. We needed to use MVC, server-side API, user authentication, and connect to a MySql 
 
 ## Table of Contents
-* [Installiation] (#installiation)
-* [Usage] (#usage)
-* [License] (#license)
-* [Contributions] (#contributions)
-* [Tests] (#tests)
-* [Questions] (#questions)
+- [Installation] (#installiation)
+- [Usage] (#usage)
+- [License] (#license)
+- [Contributions] (#contributions)
+- [Tests] (#tests)
+- [Questions] (#questions)
 ## Installiations
 bcrypt, connect-session-sequelize, dotenv, eslint, express, express-handlebars express-session, mysql2, nodemon, sequelize, insomnia (testing routes)
 
