@@ -33,14 +33,14 @@ Posts.init(
       },
     },
   },
-  {
-    hooks: {
-      beforeCreate: async (newPostsData) => {
-        if ((newPostsData.description).includes(badwords))
-        newPostsData.description = await badwordsArray.newPostsData
-      }, 
-    },
-  },
+  // {
+  //   hooks: {
+  //     beforeCreate: async (newPostsData) => {
+  //       if ((newPostsData.description).includes(badwords))
+  //       newPostsData.description = await badwordsArray.newPostsData
+  //     }, 
+  //   },
+  // },
   {
     sequelize,
     timestamps: false,
