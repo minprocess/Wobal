@@ -1,11 +1,14 @@
 <h1 style="padding-left: 23px;">Hello, {{user.fullname}}! </h1>
-<div class="jumbotron jumbotron-fluid" style="border: 1px black solid; margin: 1% 2%; padding: 4%; box-shadow: 0 0 10px black; background-color: white">
+<div class="jumbotron jumbotron-fluid"
+  style="border: 1px black solid; margin: 1% 2%; padding: 4%; box-shadow: 0 0 10px black; background-color: white">
   <div class="container">
     <div class="card mb-3" style="max-width: 100%; min-height: 100%;">
+      {{#if user.profile_pic}}
+      <div class="col-md-4">
+        <img src="..." alt="...">
+      </div>
+      {{/if}}
       <div class="row g-0">
-        <div class="col-md-4">
-          <img src="..." alt="...">
-        </div>
         <div class="col-md-8">
           <div class="card-body">
             <h5 class="card-title">{{{user.fullname}}}</h5>
@@ -18,30 +21,27 @@
 </div>
 
 <div style="display: flex; justify-content: center; margin-top: 1%;">
-  <div style="border: black solid 1px; width: 50%; padding: 1%; box-shadow: 0 0 10px black; background-color: white; margin-top: 10px">
+  <div
+    style="border: black solid 1px; width: 50%; padding: 1%; box-shadow: 0 0 10px black; background-color: white; margin-top: 10px">
     <div class="row mt-4" style="display: flex; justify-content: center;">
       <div class="col-md-6">
-        <h3 style="font-size: 40px;">Create a Post</h3>
+        
 
-        <form id="post-form">
-          <div style="" class="form-group">
-            <label for="post-name" style="font-size: 35px; padding-left:60px">Post Title</label>
-            <input style="border: 2px solid black; padding-left: 70px" class="form-input" type="text" id="post-name" name="post-name" />
-          </div>
-          <div class="form-group">
-            <label for="post-description" style="font-size: 35px; padding-left: 40px">Description</label>
-            <textarea style="border: 2px solid black; padding-left: 120px" class="form-input" id="post-description" name="post-description"></textarea>
-          </div>
-          <div style="border: 2px solid black; margin-top: 20px;" class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
-            <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0">
-            <label id="upload-label" for="upload" class="font-weight-light text-muted">
-        </label>
-          </div>
-          <div class="form-group">
-            <button style="background-color: rgb(196, 170, 216); border: 2px solid black; color: white; margin-left:90px" type="submit" id="createpost" class="btn btn-primary">Create</button>
-          </div>
-        </form>
+        <form id="post-form" style="display: flex; justify-content: center; flex-wrap: wrap;">
+          <h3 style="font-size: 40px;">Create a Post</h3>
+          <label for="post-name" style="font-size: 35px;">Post Title</label>
+          <input style="border: 2px solid black; padding-left: 70px" class="form-input" type="text" id="post-name"
+            name="post-name" />
+          <label for="post-description" style="font-size: 35px;">Description</label>
+          <input style="border: 2px solid black;" class="form-input" id="post-description"
+            name="post-description"></input>
+          <label for="post-description" style="font-size: 35px;">Image Link</label>
+          <input style="border: 2px solid black;" class="form-input" id="post-description"
+            name="post-photo"></input>
+          <button style="background-color: rgb(196, 170, 216); border: 2px solid black; color: white; margin-left:90px"
+            type="submit" id="createpost" class="btn btn-primary">Create</button>
       </div>
+      </form>
     </div>
   </div>
 </div>

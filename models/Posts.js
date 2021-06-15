@@ -46,7 +46,6 @@ Posts.init(
               const newPostIndex = newPostArray.indexOf(badWord)
               actualArray[newPostIndex] = '*'.repeat(eval(badWordLength))
               newPostsData.dataValues.description = actualArray.join(' ')
-              console.log(`\n\n ${badWord} \n\n`);
               }
             }
           }
