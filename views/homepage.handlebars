@@ -1,4 +1,4 @@
-<ul style="list-style-type:none;">
+<ul style="list-style-type:none;" class="post-list">
     {{#each posts as |post|}}
     <li>
         <div class="card" style="width: 500px;; margin-top:10px">
@@ -12,12 +12,14 @@
             <div class="">
             <label for="" style="font-size: 10px"></label>
             <input style="height: 30px; width: 80%" placeholder="Type a Comment..." name=""></input>
-          </div>
+          </div id>
             {{#each post.Comments as |comment|}}
                 <div style="padding:10px; border: red; background:#dedede">
                     <p > {{comment.description}}</p>
+                    <button class="btn btn-sm btn-danger" data-id="{{comment.id}}">delete</button>
                 </div>
             {{/each}}
+
         </div>
 
     </li>
