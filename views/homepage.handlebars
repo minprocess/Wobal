@@ -1,4 +1,4 @@
-<ul style="list-style-type:none;" class="post-list">
+<ul style="list-style-type:none;">
     {{#each posts as |post|}}
     <li>
         <div class="card" style="width: 500px;; margin-top:10px">
@@ -16,7 +16,7 @@
             {{#each post.Comments as |comment|}}
                 <div style="padding:10px; border: red; background:#dedede">
                     <p > {{comment.description}}</p>
-                    <button class="btn btn-sm btn-danger" data-id="{{comment.id}}">delete</button>
+                    <button class="btn btn-sm btn-danger delbutton" data-id="{{comment.id}}">delete</button>
                 </div>
             {{/each}}
 
@@ -25,3 +25,5 @@
     </li>
 {{/each}}
 </ul>
+
+<script src="./js/homepage.js"></script>
