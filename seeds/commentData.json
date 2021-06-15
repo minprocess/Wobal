@@ -1,17 +1,27 @@
 [
+  {
+      "description": "Looks like fun!",
+      "user_id": 3,
+      "post_id": 1
+    },
     {
-        "description": "Looks like fun!"
-      },
-      {
-        "description": "Awesome!"
-      },
-      {
-        "description": "Try not to pull a muscle"
-      },
-      {
-        "description": "You got your scuba diving certification?"
-      },
-      {
-        "description": "Nice!"
-      }
+      "description": "Awesome!",
+      "user_id": 2,
+      "post_id": 1
+    },
+    {
+      "description": "Try not to pull a muscle",
+      "user_id": 3,
+      "post_id": 2
+    },
+    {
+      "description": "You got your scuba diving certification?",
+      "user_id": 1,
+      "post_id": 2
+    },
+    {
+      "description": "Nice!",
+      "user_id": 1,
+      "post_id": 3
+    }
 ]
