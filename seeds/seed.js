@@ -15,12 +15,12 @@ const seedDatabase = async () => {
       returning: true,
     }); 
     console.log('\n----- USER DATA SYNCED -----\n')
-
-    await Comments.bulkCreate(commentData, {}); 
-      console.log('\n----- COMMENTS DATA SYNCED -----\n')
   
     await Posts.bulkCreate(postData, {}); 
-      console.log('\n----- POST DATA SYNCED -----\n')
+    console.log('\n----- POST DATA SYNCED -----\n')
+
+    await Comments.bulkCreate(commentData, {}); 
+    console.log('\n----- COMMENTS DATA SYNCED -----\n')
   
     process.exit(0);
   };
