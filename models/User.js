@@ -12,11 +12,11 @@ User.init(
   {
     username: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     fullname: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     description: {
       type: DataTypes.STRING,

@@ -91,7 +91,9 @@ router.post('/newuser', async (req, res) => {
     console.log(req.body);
     User.create({
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      username: req.body.username,
+      fullname: req.body.fullname
     })
       .then(newUser => res.status(200).json(newUser))
       .catch(err => res.status(400).json(err))
