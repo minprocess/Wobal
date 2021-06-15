@@ -1,34 +1,25 @@
 <ul style="list-style-type:none;">
     {{#each posts as |post|}}
-    <ul>
-        <div class="card" style="width: 500px; margin-top:10px; border: 2px solid black; margin-bottom: 10px">
+    <li>
+        <div class="card" style="width: 500px;; margin-top:10px">
                 {{!-- <p>Created by {{post.fullname}} on {{format_date fullname.date_created}}</p> --}}
             <header style="padding: 10px">{{post.name}}</header>
+
             <img src="{{post.photo}}" class="card-img-top" alt="...">
             <div class="card-body">
                 <p class="card-text">{{post.description}}</p>
             </div>
             <div class="">
-                <label for="" style="font-size: 10px"></label>
-                <textarea style="height: .5%; width: 80%" placeholder="Type a Comment..." name=""></textarea>
-            </div>
-
-            {{#each comments as |comment|}}
-            <div style="padding:10px; border: red; background:#dedede">
-                <p> {{comment.description}}</p>
-            </div>
-            <div class="">
-                <label for="" style="font-size: 10px"></label>
-                <textarea style="height: .5%; width: 80%" placeholder="Type a Comment..." name=""></textarea>
-            </div>
+            <label for="" style="font-size: 10px"></label>
+            <textarea style="height: 30px; width: 80%" placeholder="Type a Comment..." name=""></textarea>
+          </div>
+            {{#each post.Comments as |comment|}}
+                <div style="padding:10px; border: red; background:#dedede">
+                    <p > {{comment.description}}</p>
+                </div>
             {{/each}}
         </div>
-            <div class="">
-            <label for="" style="font-size: 10px"></label>
-            <textarea style="height: .5%; width: 80%" placeholder="Type a Comment..." name=""></textarea>
-          </div>
-            <!--
-            {{#each comments as |comment|}}
-    </ul>
+
+    </li>
 {{/each}}
 </ul>
