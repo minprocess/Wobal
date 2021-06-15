@@ -4,14 +4,24 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    const postsData = await Posts.findAll();
+    const postsData = await Posts.findAll({
+      include: [{
+        model: Comments
+      }]
+    });
     const posts = postsData.map((posts) => posts.get({ plain: true }));
 
+// console.log(posts[0].Comments[0].description);
+//     console.log(postsData[0].dataValues.Comments)
+//     const commentsData = await Comments.findAll();
+//     var mappedComments
+//     for (let i = 0; i < posts.length; i++) {
+//       for(let a = 0; a < (posts[i].Comments).length; a++){
+//         mappedComments += posts[i].Comments[a].description
+//       }
+//     }
 
-
-    const commentsData = await Comments.findAll();
-    const comments = commentsData.map((comments) => comments.get({ plain: true }));
-
+// console.log(mappedComments);
     res.render('homepage', {
       posts,
       logged_in: req.session.logged_in

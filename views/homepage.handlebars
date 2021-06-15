@@ -8,19 +8,18 @@
             <div class="card-body">
                 <p class="card-text">{{post.description}}</p>
             </div>
+            {{#each post.Comments as |comment|}}
+                <div style="padding:10px; border: red; background:#dedede">
+                    <p > {{comment.description}}</p>
+                </div>
+            {{/each}}
+        </div>
             <div class="">
             <label for="" style="font-size: 10px"></label>
             <textarea style="height: .5%; width: 80%" placeholder="Type a Comment..." name=""></textarea>
           </div>
             <!--
             {{#each comments as |comment|}}
-                <div style="padding:10px; border: red; background:#dedede">
-                    <p > {{comment.description}}</p>
-                </div>
-            {{/each}}
-            -->
-        </div>
-
     </ul>
 {{/each}}
 </ul>
