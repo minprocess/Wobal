@@ -25,3 +25,4 @@ async function newFormHandler(event) {
 
 document.getElementById('createpost').addEventListener('click', newFormHandler);
 document.getElementById('post-form').addEventListener('submit', newFormHandler);
+

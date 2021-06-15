@@ -13,6 +13,10 @@
           <div class="card-body">
             <h5 class="card-title">{{{user.fullname}}}</h5>
             <p class="card-text">{{{user.description}}}</p>
+            {{!-- image link for profile picture  --}}
+          <label for="post-description" style="font-size: 100%;">Profile Picture link</label>
+          <input style="border: 2px solid black;" class="form-input" id="upload"
+            name="post-photo"></input>
           </div>
         </div>
       </div>
@@ -36,7 +40,7 @@
           <input style="border: 2px solid black;" class="form-input" id="post-description"
             name="post-description"></input>
           <label for="post-description" style="font-size: 35px;">Image Link</label>
-          <input style="border: 2px solid black;" class="form-input" id="post-description"
+          <input style="border: 2px solid black;" class="form-input" id="upload"
             name="post-photo"></input>
           <button style="background-color: rgb(196, 170, 216); border: 2px solid black; color: white; margin-left:90px"
             type="submit" id="createpost" class="btn btn-primary">Create</button>
