@@ -22,8 +22,8 @@ router.get('/', async (req, res) => {
         }
       ],
     });
-    const posts = postsData.map((posts3) => posts3.get({ plain: true }));
 
+    const posts = postsData.map((posts) => posts.get({ plain: true }));
     res.render('homepage', {
       posts,
       logged_in: req.session.logged_in
@@ -41,7 +41,7 @@ router.get('/profile', withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
-
+ 
     res.render('profile', {
       user,
       logged_in: true
@@ -78,5 +78,12 @@ router.delete('/comment:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/search', withAuth, async (req, res) => {
+  res.render('search', {
+    logged_in: true
+  });
+});
+
 
 module.exports = router;
