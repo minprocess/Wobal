@@ -10,18 +10,6 @@ router.get('/', async (req, res) => {
       }]
     });
     const posts = postsData.map((posts) => posts.get({ plain: true }));
-
-// console.log(posts[0].Comments[0].description);
-//     console.log(postsData[0].dataValues.Comments)
-//     const commentsData = await Comments.findAll();
-//     var mappedComments
-//     for (let i = 0; i < posts.length; i++) {
-//       for(let a = 0; a < (posts[i].Comments).length; a++){
-//         mappedComments += posts[i].Comments[a].description
-//       }
-//     }
-
-// console.log(mappedComments);
     res.render('homepage', {
       posts,
       logged_in: req.session.logged_in
@@ -39,7 +27,7 @@ router.get('/profile', withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
-
+ 
     res.render('profile', {
       user,
       logged_in: true
@@ -76,5 +64,12 @@ router.delete('/comment:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/search', withAuth, async (req, res) => {
+  res.render('search', {
+    logged_in: true
+  });
+});
+
 
 module.exports = router;

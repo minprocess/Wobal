@@ -40,6 +40,12 @@
     background-color: white;
   }
 
+.submitButton{
+  background-color: rgb(196, 170, 216); 
+  border: 2px solid black; 
+  color: white;
+}
+
 
   @media only screen and (max-width: 777px) {
     .login{

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Posts, Comments  } = require('../../models');
+const { User, Posts, Comments } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
@@ -39,7 +39,7 @@ router.post('/login', async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-      
+
       res.json({ user: userData, message: 'You are now logged in!' });
     });
 
@@ -60,18 +60,18 @@ router.post('/logout', (req, res) => {
 
 // To create a post
 router.post('/post', (req, res) => {
-    Posts.create({
-      photo: req.body.photo,
-      name: req.body.name,
-      description: req.body.description,
-      user_id: req.session.user_id
+  Posts.create({
+    photo: req.body.photo,
+    name: req.body.name,
+    description: req.body.description,
+    user_id: req.session.user_id
+  })
+    .then(newPost => res.status(200).json(newPost))
+    .catch(err => {
+      console.log(err)
+      res.status(400).json(err)
+
     })
-      .then(newPost => res.status(200).json(newPost))
-      .catch(err => {
-        console.log(err)
-        res.status(400).json(err)
-      
-      })
 
 });
 
@@ -87,19 +87,48 @@ router.post('/comment', async (req, res) => {
 
 // To create a user
 router.post('/newuser', async (req, res) => {
-  try {
-    console.log(req.body);
-    User.create({
-      email: req.body.email,
-      password: req.body.password,
-      username: req.body.username,
-      fullname: req.body.fullname
-    })
-      .then(newUser => res.status(200).json(newUser))
-      .catch(err => res.status(400).json(err))
-  } catch (err) {
-    res.status(400).json(err);
-  }
+  console.log(req.body);
+  User.create({
+    email: req.body.email,
+    password: req.body.password,
+    username: req.body.username,
+    fullname: req.body.fullname
+  })
+    .then(newUser => res.status(200).json(newUser))
+    .catch(err => res.status(400).json(err))
 });
+
+// To update a user pic
+router.put('/user', async (req, res) => {
+  console.log(req.body);
+  User.update(
+    { profile_pic: req.body.userphoto },
+    { where: { id: req.session.user_id } })
+    .then(newUser => res.status(200).json(newUser))
+    .catch(err => res.status(400).json(err))
+});
+
+// to remove pfp
+router.put('/nophoto', async (req, res) => {
+  console.log(req.body);
+  User.update(
+    { profile_pic: null },
+    { where: { id: req.session.user_id } })
+    .then(newUser => res.status(200).json(newUser))
+    .catch(err => res.status(400).json(err))
+});
+
+router.get('/searchUser/:query', async (req, res) => {
+    console.log(req.params.query);
+    User.findAll({
+      where: {
+        fullname: req.params.query
+      }
+    })
+    .then(userData => res.status(200).json(userData))
+    .catch(err => res.status(400).json(err))
+});
+
+
 
 module.exports = router;

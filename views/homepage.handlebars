@@ -3,9 +3,10 @@
     <li>
         <div class="card" style="width: 500px;; margin-top:10px">
                 {{!-- <p>Created by {{post.fullname}} on {{format_date fullname.date_created}}</p> --}}
-            <header style="padding: 10px">{{post.name}}</header>
-
+            <header style="padding: 10px; font-weight:700;">{{post.name}}</header>
+{{#if post.photo}}
             <img src="{{post.photo}}" class="card-img-top" alt="...">
+            {{/if}}
             <div class="card-body">
                 <p class="card-text">{{post.description}}</p>
             </div>
