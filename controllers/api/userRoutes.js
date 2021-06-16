@@ -129,6 +129,15 @@ router.get('/searchUser/:query', async (req, res) => {
     .catch(err => res.status(400).json(err))
 });
 
-
+router.post('/newComment', async (req, res) => {
+  console.log(req.body);
+  Comments.create({
+    description: req.body.commentData,
+    user_id: req.session.user_id,
+    post_id: req.body.post_id
+  })
+    .then(newComment => res.status(200).json(newComment))
+    .catch(err => res.status(400).json(err))
+});
 
 module.exports = router;
