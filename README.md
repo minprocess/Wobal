@@ -18,7 +18,11 @@ For this project, we are required to create our first full application. Our team
 bcrypt, connect-session-sequelize, dotenv, eslint, express, express-handlebars express-session, mysql2, nodemon, sequelize, insomnia (testing routes)
 
 ## Usage
-Insert screenshots here
+![desc](/assets/images/wobal1.png)
+![desc](/assets/images/wobal2.png)
+![desc](/assets/images/wobal3.png)
+![desc](/assets/images/wobal4.png)
+![desc](/assets/images/wobal5.png)
 
 ## License
 Copyright (c) 2021 Alex Bradshaw, Michael DiSanto, Bill Pate
