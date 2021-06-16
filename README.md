@@ -1,6 +1,9 @@
 # Wobal - Project 2
 https://github.com/alexbradshaw/Wobal
 
+## Deployed App
+https://hidden-waters-49471.herokuapp.com/
+
 ## Description
 For this project, we are required to create our first full application. Our team decided to create a social media site called Wobal for only your close friends and family. We needed to use MVC, server-side API, user authentication, and connect to a MySql 
 
