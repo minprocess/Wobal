@@ -17,6 +17,9 @@ For this project, we are required to create our first full application. Our team
 ## Installations
 bcrypt, connect-session-sequelize, dotenv, eslint, express, express-handlebars express-session, mysql2, nodemon, sequelize, insomnia (testing routes)
 
+### Demo
+[<img src="https://img.youtube.com/vi/4sNmsmclpCo/maxresdefault.jpg" width="90%" target="_blank">](https://www.youtube.com/watch?v=4sNmsmclpCo)
+
 ## Usage
 ![wobal1 pic](assets/images/Wobal1.PNG)
 ![wobal2 pic](assets/images/Wobal2.PNG)
