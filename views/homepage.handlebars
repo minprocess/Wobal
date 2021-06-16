@@ -8,19 +8,20 @@
             <img src="{{post.photo}}" class="card-img-top" alt="...">
             <div class="card-body">
                 <p class="card-text">{{post.description}}</p>
+                <p class="card-text">{{post.user.fullname}}</p>
             </div>
             <div class="">
             <label for="" style="font-size: 10px"></label>
             <input style="height: 30px; width: 80%" placeholder="Type a Comment..." name=""></input>
-          </div id>
+          </div>
             {{#each post.Comments as |comment|}}
                 <div style="padding:10px; border: red; background:#dedede">
                     <p > {{comment.description}}</p>
+                    <p > {{comment.user.fullname}}</p>
                     <!-- <p > {{comment.name}}</p> -->
                     <button class="btn btn-sm btn-danger delbutton" data-id="{{comment.id}}">delete</button>
                 </div>
             {{/each}}
-
         </div>
 
     </li>
