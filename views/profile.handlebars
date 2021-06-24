@@ -33,14 +33,18 @@
 
         <form id="post-form" style="display: flex; justify-content: center; flex-wrap: wrap;">
           <h3 style="font-size: 40px;">Create a Post</h3>
+
           <label for="post-name" style="font-size: 35px;">Post Title</label>
           <input style="border: 2px solid black; padding-left: 0%" class="form-input" type="text" id="post-name"
             name="post-name" />
+
           <label for="post-description" style="font-size: 35px;">Description</label>
           <input style="border: 2px solid black;" class="form-input" id="post-description"
             name="post-description"></input>
-          <label for="post-description" style="font-size: 35px;">Image Link</label>
-          <input style="border: 2px solid black;" class="form-input" id="post-upload" name="post-photo"></input>
+
+          <label for="post-photo-link" style="font-size: 35px;">Image Link</label>
+          <input style="border: 2px solid black;" class="form-input" id="post-photo-link" name="post-photo-link"></input>
+
           <button type="submit" id="createpost" class="submitButton btn btn-primary">Create</button>
       </div>
       </form>
@@ -70,7 +74,7 @@
       </div>
       {{#each post.Comments as |comment|}}
       <div style="padding:10px; border: red; background:#dedede">
-        <p> {{comment.description}}</p>
+        <p> {{comment.commentText}}</p>
         <button class="btn btn-sm btn-danger delbutton" data-id="{{comment.id}}">delete</button>
       </div>
       {{/each}}

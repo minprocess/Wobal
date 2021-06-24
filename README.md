@@ -1,8 +1,7 @@
-# Wobal - Project 2
-https://github.com/alexbradshaw/Wobal
+# Wobal
 
 ## Deployed App
-https://hidden-waters-49471.herokuapp.com/
+
 
 ## Description
 For this project, we are required to create our first full application. Our team decided to create a social media site called Wobal for only your close friends and family. We needed to use MVC, server-side API, user authentication, and connect to a MySql 
@@ -15,14 +14,22 @@ For this project, we are required to create our first full application. Our team
 - [Tests](#tests)
 - [Questions](#questions)
 ## Installations
+Source code on GitHub
+https://github.com/minprocess/Wobal
+
 bcrypt, connect-session-sequelize, dotenv, eslint, express, express-handlebars express-session, mysql2, nodemon, sequelize, insomnia (testing routes)
+
+heroku run node seeds/seed.js
 
 ### Demo
 [<img src="https://img.youtube.com/vi/4sNmsmclpCo/hqdefault.jpg" width="90%" target="_blank">](https://www.youtube.com/watch?v=4sNmsmclpCo)
 
 ## Usage
-![wobal1 pic](assets/images/Wobal1.PNG)
-![wobal2 pic](assets/images/Wobal2.PNG)
+https://wobal-2542.herokuapp.com/
+
+
+![Login and sign up dialog boxes](assets/images/Wobal1.PNG)
+![Dialog to create a post with text box for description and a link to a photo](assets/images/Wobal2.PNG)
 ![wobal3 pic](assets/images/Wobal3.PNG)
 ![wobal4 pic](assets/images/Wobal4.PNG)
 ![wobal5 pic](assets/images/Wobal5.PNG)
