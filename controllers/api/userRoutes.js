@@ -132,7 +132,7 @@ router.get('/searchUser/:query', async (req, res) => {
 router.post('/newComment', async (req, res) => {
   console.log(req.body);
   Comments.create({
-    description: req.body.commentData,
+    commentText: req.body.commentData,
     user_id: req.session.user_id,
     post_id: req.body.post_id
   })
