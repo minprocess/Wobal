@@ -1,7 +1,7 @@
 async function newFormHandler(event) {
     event.preventDefault();
-    const name = document.getElementById('post-name').value;
-    const description = document.getElementById('post-description').value;
+    const name = document.getElementById('post-title').value;
+    const description = document.getElementById('post-text').value;
     const photo = document.getElementById('post-photo-link').value;
 
     const response = await fetch(`/api/users/post`, {

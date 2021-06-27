@@ -22,6 +22,42 @@
   </div>
 </div>
 
+    <section class="row justify-content-center my-4" style="background-color: white">
+      <div class="col-md-6">
+        <!-- <form id="post-form" style="display: flex; justify-content: center; flex-wrap: wrap;"> -->
+        <!-- <form id="post-form"> -->
+          <h3 style="font-size: 40px;">Create a Post</h3>
+
+          <div class="form-group">
+            <label for="post-title">Post Title</label>
+            <input type="text" class="form-control" id="post-title" name="post-title">
+            <!--
+            <label for="post-name" style="font-size: 35px;">Post Title</label>
+            <input type="text" style="border: 2px solid black; padding-left: 0%" class="form-input" id="post-name" name="post-name">
+            -->
+          </div>
+
+          <div class="form-group">
+            <label for="post-text">Text</label>
+            <input type="text" class="form-control" id="post-text" name="post-text">
+            <!--
+            <label for="post-description" style="font-size: 35px;">Text</label>
+            <input type="text" style="border: 2px solid black;" class="form-input" id="post-description" name="post-description">
+            -->
+          </div>
+
+          <div class="form-group">
+            <label for="post-photo-link">Image Link</label>
+            <input type="text" class="form-control" id="post-photo-link" name="post-photo-link">
+          </div>
+
+          <button type="submit" id="createpost" class="submitButton btn btn-primary">Create</button>
+      <!-- </form> -->
+    </div>
+
+    </section>
+
+<!--
 <div style="display: flex; justify-content: center; margin-top: 1%;">
   <div style="border: black solid 1px; width: 50%; padding: 1%; box-shadow: 0 0 10px black; background-color: white; margin-top: 10px">
     <div class="row mt-4" style="display: flex; justify-content: center;">
@@ -43,7 +79,7 @@
     </div>
   </div>
 </div>
-
+-->
 {{#if user.posts}}
 <div style="display:flex; justify-content: center; ">
   <h1 style="margin-top: 1%; background-color: white; padding: 1%; border: black solid 1px; box-shadow: 0 0 10px black;">Your Posts</h1>
