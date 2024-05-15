@@ -1,7 +1,7 @@
 async function searchUsers(event) {
     event.preventDefault();
     const query = document.getElementById('searchBar').value;
-
+// test git, can safely remove this comment
     fetch(`/api/users/searchUser/${query}`, {
         method: 'GET',
         headers: {
