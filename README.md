@@ -13,13 +13,24 @@ For this project, we are required to create our first full application. Our team
 - [Contributing](#contributing)
 - [Tests](#tests)
 - [Questions](#questions)
-## Installations
+## Installation
 Source code on GitHub
 https://github.com/minprocess/Wobal
 
+Fork this project to your own GitHub repository. Then clone the forked project to your local PC. 
+
+There are several npm packages needed so you will need to install them. First, here are the packages
 bcrypt, connect-session-sequelize, dotenv, eslint, express, express-handlebars express-session, mysql2, nodemon, sequelize, insomnia (testing routes)
 
+In the a terminal inside VS Code run the following command to install the above dependencies
+npm install
+
+The MySQL database for Users, Posts and Comments for Wobal is stored on the same PC as the local project.
+
+If you host Wobal in your own Heroku website you will need to run the following script to initialize a database in your Heroku database for Users, Posts and Comments
 heroku run node seeds/seed.js
+
+
 
 ### Demo
 [<img src="https://img.youtube.com/vi/4sNmsmclpCo/hqdefault.jpg" width="90%" target="_blank">](https://www.youtube.com/watch?v=4sNmsmclpCo)
@@ -33,6 +44,9 @@ https://wobal-2542.herokuapp.com/
 ![wobal3 pic](assets/images/Wobal3.PNG)
 ![wobal4 pic](assets/images/Wobal4.PNG)
 ![wobal5 pic](assets/images/Wobal5.PNG)
+
+Testing routes (for developers)
+Use insomnia
 
 ## License
 Copyright (c) 2021 Alex Bradshaw, Michael DiSanto, Bill Pate
