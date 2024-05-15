@@ -33,8 +33,8 @@ heroku run node seeds/seed.js
 $ git checkout -b iss53 # Switch to a new branch "iss53"
 $ vim index.html # Edit your website
 $ git commit -a -m 'added a new footer [issue 53]' # Commit Done
-$ git checkout master # Switch to branch 'master'
-$ git merge iss53 # merge to master
+$ git checkout main # Switch to branch 'main'
+$ git merge iss53 # merge to main
 
 ### Demo
 [<img src="https://img.youtube.com/vi/4sNmsmclpCo/hqdefault.jpg" width="90%" target="_blank">](https://www.youtube.com/watch?v=4sNmsmclpCo)
