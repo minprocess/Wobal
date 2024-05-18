@@ -1,16 +1,31 @@
 const router = require('express').Router();
-const { Posts , User, Comments } = require('../models');
+const { Posts, User, Comments } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    const postsData = await Posts.findAll();
+
+    const postsData = await Posts.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['fullname']
+        },
+        { model: Comments, 
+          include: [
+            {
+              model:User, 
+              attributes:['fullname']
+            }
+          ]
+        }
+      ],
+    });
 
     const posts = postsData.map((posts) => posts.get({ plain: true }));
-
-    res.render('homepage', { 
-      posts, 
-      logged_in: req.session.logged_in 
+    res.render('homepage', {
+      posts,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
@@ -25,7 +40,7 @@ router.get('/profile', withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
-
+ 
     res.render('profile', {
       user,
       logged_in: true
@@ -44,34 +59,30 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-// To create a post
-router.post('/', async (req, res) => {
+// DELETE a comment in a post in the feed
+router.delete('/comment:id', async (req, res) => {
+  var theId = req.params.id.replace(':', '');
   try {
-    const postsData = await Posts.create (req.body);
-    res.status(200).json(postsData);
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
+    const commentData = await Comments.destroy( {
+      where: { id: theId }
+    });
 
-// To create a comment
-router.post('/', async (req, res) => {
-  try {
-    const commentData = await Comments.create (req.body);
+    if (!commentData) {
+      res.status(404).json({ message: 'No comment found with that id!' });
+      return;
+    }
+
     res.status(200).json(commentData);
   } catch (err) {
-    res.status(400).json(err);
+    res.status(500).json(err);
   }
 });
 
-// To create a user
-router.post('/', async (req, res) => {
-  try {
-    const userData = await User.create (req.body);
-    res.status(200).json(userData);
-  } catch (err) {
-    res.status(400).json(err);
-  }
+router.get('/search', withAuth, async (req, res) => {
+  res.render('search', {
+    logged_in: true
+  });
 });
+
 
 module.exports = router;

@@ -1,42 +1,47 @@
-<div class="row">
-  <div class="col-md-6">
-    <h2>Login</h2>
+<div style="background-color: none; display:flex;" class="row">
+  <div class="col-md-6 ml-1 login">
+    <h2 style="padding-left: 28px; padding-bottom: 10px">Login</h2>
 
     <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">email:</label>
-        <input class="form-input" type="text" id="email-login" />
+      <div style="padding-left: 28px; padding-bottom: 10px" class="form-group">
+        <label for="email-login">Email:</label>
+        <input type="text" style="border: 2px solid black" class="form-input" id="email-login">
       </div>
       <div class="form-group">
-        <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
+        <label for="password-login">Password:</label>
+        <input type="password" style="border: 2px solid black" class="form-input" id="password-login">
       </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
+      <div style="padding-left: 28px; padding-top: 10px" class="form-group">
+        <button type="submit" style="background-color: rgb(196, 170, 216); border: 2px solid black" class="btn btn-primary">login</button>
       </div>
     </form>
   </div>
-  <div class="col-md-6">
-    <h2>Signup</h2>
+  <div style="box-shadow: 0 0 10px black; background-color: white;" class="col-md-6 ml-1">
+    <h2 style="padding-left: 28px; padding-bottom: 10px">Signup</h2>
 
-    <form class="form signup-form">
-      <div class="form-group">
-        <label for="name-signup">name:</label>
-        <input class="form-input" type="text" id="name-signup" />
+    <form class="form signup-form" id="signupform">
+      <div style="padding-left: 28px; padding-bottom: 10px" class="form-group">
+        <label for="name-signup">Full Name:</label>
+        <input type="text" class="form-input" id="name-signup">
       </div>
-      <div class="form-group">
-        <label for="email-signup">email:</label>
-        <input class="form-input" type="text" id="email-signup" />
+      <div style="padding-left: 28px; padding-bottom: 10px" class="form-group">
+        <label for="username-signup">Username:</label>
+        <input type="text" class="form-input" id="username-signup">
       </div>
-      <div class="form-group">
-        <label for="password-signup">password:</label>
-        <input class="form-input" type="password" id="password-signup" />
+      <div style="padding-left: 61px; padding-bottom: 10px" class="form-group">
+        <label for="email-signup">Email:</label>
+        <input type="text" class="form-input"  id="email-signup">
       </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
+      <div style="padding-left: 33px; padding-bottom: 10px" class="form-group">
+        <label for="password-signup">Password:</label>
+        <input type="password" class="form-input" id="password-signup">
+      </div>
+      <div style="padding-left: 28px; padding-top: 10px; padding-bottom: 10px" class="form-group">
+        <button type="submit" style="background-color: rgb(196, 170, 216); border: 2px solid black" class="btn btn-primary">signup</button>
       </div>
     </form>
   </div>
 </div>
 
+<script src="./js/newuser.js"></script>
 <script src="./js/login.js"></script>

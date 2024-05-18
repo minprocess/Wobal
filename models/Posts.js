@@ -1,5 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+var badwordsArray = require('badwords/array');
+
 
 // badwords code. Please see npmjs for Usage
 const badwordsArray = require('badwords/array');
@@ -8,12 +10,6 @@ class Posts extends Model {}
 
 Posts.init(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
     photo: {
       type: DataTypes.STRING,
       allowNull: true,
@@ -24,6 +20,7 @@ Posts.init(
     },
     description: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
     date_created: {
       type: DataTypes.DATE,
@@ -41,18 +38,29 @@ Posts.init(
   {
     hooks: {
       beforeCreate: async (newPostsData) => {
-        if ((newPostsData.description).includes(badwords))
-        newPostsData.description = await badwordsArray.newPostsData
+        const newPostArray = (((newPostsData.dataValues.description)).split(' ')).map(v => v.toLowerCase());
+        const actualArray = (((newPostsData.dataValues.description)).split(' '))
+        for (let i = 0; i < badwordsArray.length; i++) {
+          for (let a = 0; a < newPostArray.length; a++){
+            if(badwordsArray.includes((newPostArray[a]))) {
+              const badWordIndex = badwordsArray.indexOf(newPostArray[a])
+              const badWord = badwordsArray[badWordIndex]
+              const badWordLength = badWord.length
+              const newPostIndex = newPostArray.indexOf(badWord)
+              actualArray[newPostIndex] = '*'.repeat(eval(badWordLength))
+              newPostsData.dataValues.description = actualArray.join(' ')
+              }
+            }
+          }
+          return newPostsData
       }, 
     },
+      sequelize,
+      timestamps: false,
+      freezeTableName: true,
+      underscored: true,
+      modelName: 'posts',
   },
-  {
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'posts',
-  }
 );
 
 module.exports = Posts;

@@ -1,11 +1,27 @@
 [
+  {
+      "commentText": "Looks like fun!",
+      "user_id": 3,
+      "post_id": 1
+    },
     {
-        "description": "Looks like fun!"
-      },
-      {
-        "description": "Try not to pull a muscle"
-      },
-      {
-        "description": "You got your scuba diving certification?"
-      }
+      "commentText": "Awesome!",
+      "user_id": 2,
+      "post_id": 1
+    },
+    {
+      "commentText": "Try not to pull a muscle",
+      "user_id": 3,
+      "post_id": 2
+    },
+    {
+      "commentText": "You got your scuba diving certification?",
+      "user_id": 1,
+      "post_id": 2
+    },
+    {
+      "commentText": "Nice!",
+      "user_id": 1,
+      "post_id": 3
+    }
 ]
