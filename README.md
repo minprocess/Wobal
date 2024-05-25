@@ -40,7 +40,11 @@ $ git merge iss53 # merge to main
 [<img src="https://img.youtube.com/vi/4sNmsmclpCo/hqdefault.jpg" width="90%" target="_blank">](https://www.youtube.com/watch?v=4sNmsmclpCo)
 
 ## Usage
-https://wobal-2542.herokuapp.com/
+
+To start the backend on your local PC use the command  
+`node server.js`  
+
+Go to a browser and in the address bar type `localhost:3001`. 
 
 
 ![Login and sign up dialog boxes](assets/images/Wobal1.PNG)
