@@ -1,23 +1,26 @@
 [
-    {
-      "fullname": "Alex Bradshaw",
-      "username": "alexbr",
-      "email": "alexbr@hotmail.com",
-      "password": "password12345!",
-      "description": "i work at a chicken place"
-    },
-    {
-      "fullname": "Michael DiSanto",
-      "username": "mdis",
-      "email": "mdis@gmail.com",
-      "password": "password12345!",
-      "description": "Accountant"
-    },
-    {
-      "fullname": "Bill Pate",
-      "username": "bpate",
-      "email": "bpate@aol.com",
-      "password": "pwd123",
-      "description": "C# programmer"
-    }
-  ]
+  {
+    "fullname": "Alex Bradshaw",
+    "username": "alexbr",
+    "email": "alexbr@hotmail.com",
+    "password": "password123",
+    "description": "i work at a chicken place",
+    "profile_pic": "profile.png"
+  },
+  {
+    "fullname": "Michael DiSanto",
+    "username": "mdis",
+    "email": "mdis@gmail.com",
+    "password": "password123",
+    "description": "Accountant",
+    "profile_pic": "profile.png"
+  },
+  {
+    "fullname": "Bill Pate",
+    "username": "bpate",
+    "email": "bpate@aol.com",
+    "password": "password123",
+    "description": "C# programmer",
+    "profile_pic": "profile.png"
+  }
+]

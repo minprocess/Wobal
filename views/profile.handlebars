@@ -1,115 +1,158 @@
 <h1 style="padding-left: 23px;">Hello, {{user.fullname}}! </h1>
-<div class="jumbotron jumbotron-fluid"
-  style="border: 1px black solid; margin: 1% 2%; padding: 4%; box-shadow: 0 0 10px black; background-color: white">
-  <div class="container">
-    <div class="card mb-3" style="max-width: 100%; min-height: 100%;">
-      {{#if user.profile_pic}}
-      <div class="col-md-4">
-        <img src="{{user.profile_pic}}" alt="{{user.fullname}}'s profile picture" style="max-width: 300px;">
-      </div>
-      {{/if}}
-      <div class="card-body row g-0 col-md-8">
-            <h5 class="card-title">{{{user.fullname}}}</h5>
-            <p class="card-text">{{{user.description}}}</p>
+<h3>Profile handlebars</h3>
+<!--<div class="jumbotron jumbotron-fluid" style="border: 1px black solid; margin: 1% 2%; padding: 4%; box-shadow: 0 0 10px black; background-color: white">-->
 
-            {{!-- image link for profile picture --}}
-            <label for="pfp-photo-link" style="font-size: 100%;">Profile Picture Link</label>
-            <input type="text" style="border: 2px solid black;" class="form-input" id="pfp-photo-link" name="pfp-photo-link"></input>
+<div class="container d-flex justify-content-center">
+	<form>
+		<div class="card mb-3" style="max-width: 100%; min-height: 100%;">
+			{{#if user.profile_pic}}
+				<div class="col-md-4">
+					<img
+						src="{{user.profile_pic}}"
+						alt="{{user.fullname}}'s profile picture"
+						style="max-width: 200px;"
+					/>
+				</div>
+			{{/if}}
+			<!--<div class="card-body row g-0 col-md-8">-->
+			<div class="card-body">
+				<h5 class="card-title">{{{user.fullname}}}</h5>
+				<p class="card-text">{{{user.description}}}</p>
 
-            <button id='submitButton' class="submitButton">Submit</button> <button class="submitButton" id="removePic">Remove</button>
-      </div>
-    </div>
-  </div>
+				{{! image link for profile picture }}
+				<label for="profile-pic-file" style="font-size: 100%;">Profile Picture Browse</label>
+				<input
+					type="file"
+					style="border: 2px solid black;"
+					id="profile-pic-file"
+					class="form-input"
+					name="profile-pic-file"
+				/>
+				<button id="submitButton" class="submitButton">Submit</button>
+				<button id="removePic" class="submitButton">Remove</button>
+			</div>
+		</div>
+	</form>
 </div>
+<!--</div>-->
 
-    <section class="row justify-content-center my-4" style="background-color: white">
-      <div class="col-md-6">
-        <!-- <form id="post-form" style="display: flex; justify-content: center; flex-wrap: wrap;"> -->
-        <!-- <form id="post-form"> -->
-          <h3 style="font-size: 40px;">Create a Post</h3>
+<div class="d-flex justify-content-center my-4" style="background-color: white;">
+	<form>
+    <h3 style="font-size: 30px;">Create a Post</h3>
 
-          <div class="form-group">
-            <label for="post-title">Post Title</label>
-            <input type="text" class="form-control" id="post-title" name="post-title">
-            <!--
-            <label for="post-name" style="font-size: 35px;">Post Title</label>
-            <input type="text" style="border: 2px solid black; padding-left: 0%" class="form-input" id="post-name" name="post-name">
-            -->
-          </div>
-
-          <div class="form-group">
-            <label for="post-text">Text</label>
-            <input type="text" class="form-control" id="post-text" name="post-text">
-            <!--
-            <label for="post-description" style="font-size: 35px;">Text</label>
-            <input type="text" style="border: 2px solid black;" class="form-input" id="post-description" name="post-description">
-            -->
-          </div>
-
-          <div class="form-group">
-            <label for="post-photo-link">Image Link</label>
-            <input type="text" class="form-control" id="post-photo-link" name="post-photo-link">
-          </div>
-
-          <button type="submit" id="createpost" class="submitButton btn btn-primary">Create</button>
-      <!-- </form> -->
+    <div>
+      <label for="post-title">Post Title</label>
+      <input
+        type="text"
+        id="post-title"
+        class="form-control"
+        name="post-title"
+      />
+		</div>
+    <div>
+      <label for="post-text">Text</label>
+      <input type="text" id="post-text" class="form-control" name="post-text" />
     </div>
 
-    </section>
+    <div>
+      <img src="profile.png" id="post-pic" style="max-width: 200px;"/>
+      <label for="post-pic-file">Image Link</label>
+      <input type="file" id="post-pic-file" accept="image/*" />
+			<small>Select one file at a time</small>
+			<small>Will overwrite file with the same name</small>
+      <!---<input type="file" accept="image/*" onChange={handleFileChange}>
+			<input type="text" class="form-control" id="post-pic-fuke" name="post-pic-file">
+		-->
+    </div>
+
+    <button
+      type="submit"
+      id="createpost"
+      class="submitButton btn btn-primary"
+    >Create</button>
+    <!-- </form> -->
+  </form>
+</div>
 
 <!--
 <div style="display: flex; justify-content: center; margin-top: 1%;">
-  <div style="border: black solid 1px; width: 50%; padding: 1%; box-shadow: 0 0 10px black; background-color: white; margin-top: 10px">
-    <div class="row mt-4" style="display: flex; justify-content: center;">
-      <div class="col-md-6">
-        <form id="post-form" style="display: flex; justify-content: center; flex-wrap: wrap;">
-          <h3 style="font-size: 40px;">Create a Post</h3>
+	<div style="border: black solid 1px; width: 50%; padding: 1%; box-shadow: 0 0 10px black; background-color: white; margin-top: 10p;x">
+		<div class="row mt-4" style="display: flex; justify-content: center;">
+			<div class="col-md-6">
+				<form id="post-form" style="display: flex; justify-content: center; flex-wrap: wrap;">
+					<h3 style="font-size: 40px;">Create a Post</h3>
 
-          <label for="post-name" style="font-size: 35px;">Post Title</label>
-          <input type="text" style="border: 2px solid black; padding-left: 0%" class="form-input" id="post-name" name="post-name" />
+					<label for="post-name" style="font-size: 35px;">Post Title</label>
+					<input type="text" style="border: 2px solid black; padding-left: 0%;" class="form-input" id="post-name" name="post-name">
 
-          <label for="post-description" style="font-size: 35px;">Text</label>
-          <input type="text" style="border: 2px solid black;" class="form-input" id="post-description" name="post-description"></input>
+					<label for="post-description" style="font-size: 35px;">Text</label>
+					<input type="text" style="border: 2px solid black;" class="form-input" id="post-description" name="post-description">
 
-          <label for="post-photo-link" style="font-size: 35px;">Image Link</label>
-          <input type="text" style="border: 2px solid black;" class="form-input" id="post-photo-link" name="post-photo-link"></input>
+					<label for="post-pic-file" style="font-size: 35px;">Image Link</label>
+					<input type="text" style="border: 2px solid black;" class="form-input" id="post-pic-file" name="post-pic-file">
 
-          <button type="submit" id="createpost" class="submitButton btn btn-primary">Create</button>
-      </form>
-    </div>
-  </div>
+					<button type="submit" id="createpost" class="submitButton btn btn-primary">Create</button>
+				</form>
+			</div>
+		</div>
+	</div>
 </div>
 -->
 {{#if user.posts}}
-<div style="display:flex; justify-content: center; ">
-  <h1 style="margin-top: 1%; background-color: white; padding: 1%; border: black solid 1px; box-shadow: 0 0 10px black;">Your Posts</h1>
-</div>
-<ul style="list-style-type:none; display:flex; justify-content: space-around;">
-  {{#each user.posts as |post|}}
-  <li>
-    <div class="card" style="width: 500px;; margin-top:10px">
-      {{!-- <p>Created by {{post.fullname}} on {{format_date fullname.date_created}}</p> --}}
-      <header style="padding: 10px; font-weight:700;">{{post.name}}</header>
-      {{#if post.photo}}
-        <img src="{{post.photo}}" class="card-img-top" alt="...">
-      {{/if}}
-      <div class="card-body">
-        <p class="card-text">{{post.description}}</p>
-      </div>
-
-      {{#each post.Comments as |comment|}}
-      <div style="padding:10px; border: red; background:#dedede">
-        <p> {{comment.commentText}}</p>
-        <button class="btn btn-sm btn-danger delbutton" data-id="{{comment.id}}">delete</button>
-      </div>
-      {{/each}}
-
-    </div>
-
-  </li>
-  {{/each}}
-</ul>
+  <div style="display:flex; justify-content: center; ">
+    <h1
+      style="margin-top: 1%; background-color: white; padding: 1%; border: black solid 1px; box-shadow: 0 0 10px black;"
+    >Your Posts</h1>
+  </div>
+  <ul style="list-style-type:none; display:block;">
+    {{#each user.posts as |post|}}
+      <li>
+        <div class="card" style="width: 500px;; margin-top:10px;">
+          {{!-- <p>Created by {{post.fullname}} on {{format_date fullname.date_created}}</p> --}}
+          <header style="padding: 10px; font-weight:700;">{{post.name}}</header>
+          {{#if post.photo}}
+            <img src="{{post.photo}}" class="card-img-top" alt="..." />
+          {{/if}}
+          <div class="card-body">
+            <p class="card-text">{{post.description}}</p>
+          </div>
+          {{#each post.Comments as |comment|}}
+            <div style="padding:10px; border: red; background:#dedede;">
+              <p>{{comment.commentText}}</p>
+              <button
+                class="btn btn-sm btn-danger delbutton"
+                data-id="{{comment.id}}"
+              >Delete</button>
+            </div>
+          {{/each}}
+        </div>
+      </li>
+    {{/each}}
+  </ul>
 {{/if}}
 
-<script src='/js/newpost.js'> </script>
-<script src='/js/updateuser.js'> </script>
+<script>
+  let profilePic = document.getElementById('profile-pic'); 
+	let profilePicFile = document.getElementById('profile-pic-file'); // Input type='file'
+	profilePicFile.onchange = function() {
+  	profilePic.src = URL.createObjectURL(profilePicFile.files[0]); 
+	} 
+	let postPic = document.getElementById('post-pic'); 
+	let postPicFile = document.getElementById('post-pic-file'); 
+	console.log("    ")
+	console.log("postPicFile: ", postPicFile);
+	postPicFile.onchange = function() {
+  	postPic.src = URL.createObjectURL(postPicFile.files[0]);
+		let myFile = postPicFile.files[0];
+		console.log("myfile: ", myFile);
+		console.log("myfile: ", myFile.name);
+		console.log("postPic.src: ", postPic.src);
+		//let 
+		//console.log(postPic.src); 
+	}
+	console.log("     ");
+
+</script>
+
+<script src="/js/newpost.js"> </script>
+<script src="/js/updateuser.js"> </script>

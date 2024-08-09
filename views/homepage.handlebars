@@ -1,35 +1,49 @@
-<ul style="list-style-type:none;">
+<div class="container">
+  <h3>Homepage handlebars</h3>
+  <ul style="list-style-type:none;">
     {{#each posts as |post|}}
-    <li>
-        <div class="card" style="width: 500px;; margin-top:10px">
-            {{!-- <p>Created by {{post.fullname}} on {{format_date fullname.date_created}}</p> --}}
-            <header style="padding: 10px; font-weight:700;">{{post.name}}</header>
-            {{#if post.photo}}
-            <img src="{{post.photo}}" class="card-img-top" alt="...">
-            {{/if}}
-            <div class="card-body">
-                <p class="card-text">{{post.description}}</p>
-                <p class="card-text">{{post.user.fullname}}</p>
+      <li>
+<!--		<div class="card" style="width: 500px; margin-top:10px;"></div>-->
+        <div class="card w-100 w-md-50 w-lg-25" style="margin-top:10px;">
+          {{!-- <p>Created by {{post.fullname}} on {{format_date fullname.date_created}}</p> --}}
+          <header style="padding: 10px; font-weight:700;">{{post.name}}</header>
+          {{#if post.photo}}
+            <img src="{{post.photo}}" alt="..." />
+          {{/if}}
+          <div class="card-body">
+            <p class="card-text">{{post.description}}</p>
+            <p class="card-text">{{post.user.fullname}}</p>
+          </div>
+          <div class="">
+            <form class="formSelector">
+              <label
+                id="post_id"
+                class="{{post.id}}"
+                style="font-size: 10px;"
+              ></label>
+              <input
+                style="height: 30px; width: 80%;"
+                id="addComment"
+                placeholder="Type a Comment..."
+                name=""
+              />
+            </form>
+          </div>
+          {{#each post.Comments as |comment|}}
+            <div style="padding:10px; border: red; background:#dedede;">
+              <p> {{comment.commentText}}</p>
+              <p> {{comment.user.fullname}}</p>
+              <button
+                class="btn btn-sm btn-danger delbutton"
+                data-id="{{comment.id}}"
+              >delete</button>
             </div>
-            <div class="">
-                <form class="formSelector">
-                    <label id="post_id" class="{{post.id}}" style="font-size: 10px"></label>
-                    <input style="height: 30px; width: 80%" id="addComment" placeholder="Type a Comment..."
-                        name=""></input>
-                </form>
-            </div>
-            {{#each post.Comments as |comment|}}
-            <div style="padding:10px; border: red; background:#dedede">
-                <p> {{comment.commentText}}</p>
-                <p> {{comment.user.fullname}}</p>
-                <button class="btn btn-sm btn-danger delbutton" data-id="{{comment.id}}">delete</button>
-            </div>
-            {{/each}}
+          {{/each}}
         </div>
 
-    </li>
+      </li>
     {{/each}}
-</ul>
-
+  </ul>
+</div>
 <script src="./js/postcomments.js"></script>
 <script src="./js/homepage.js"></script>

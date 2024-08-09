@@ -1,58 +1,40 @@
-.jumbocontainer {
-    border: 1px black solid; 
-    margin: 1% 20%; 
-    padding: 4%; 
-    height: 70vh; 
-    background-color: white;
+:root {
+	--main-bg-color: #c4aad8;	/* pinkish purple=RGB(196,170,216) */
+	--main-text-color: #333;		/* dark grey */
+	--main-link-color: #000;	/* black */
+
+
+}
+.container {
+  width: 66.67%;
+  margin: auto;
 }
 
-/* .form-group {
-    box-shadow: 0 0 10px black
-} */
+.card {
+  border-color: gray;
+}
 
-/* .no-button {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    color: #1b89bc;
-    text-decoration: none;
-    font-size: 100%;
-  }
+.delbutton {
+  border-color: red;
+}
 
-  .no-button:hover {
-    color: #065b83;
-    text-decoration: underline;
-  } */
+.login {
+  margin-right: 5%;
+  box-shadow: 0 0 10px black;
+  width: 45%;
+  background-color: white;
+}
 
-  .card {
-    border-color: gray;    
-  }
-
-  .delbutton {
-    border-color: red;
-  }
-
-  .login{
-    margin-right:5%;
-    box-shadow: 0 0 10px black; 
-    width: 45%; 
-    background-color: white;
-  }
-
-.submitButton{
-  background-color: rgb(196, 170, 216); 
-  border: 2px solid black; 
+.submitButton {
+  background-color: var(--main-bg-color);
+  border: 2px solid black;
   color: white;
 }
 
-
-  @media only screen and (max-width: 777px) {
-    .login{
-      margin-right:0%;
-      width: 100%; 
-      margin-bottom: 5%;
-    }
+@media only screen and (max-width: 777px) {
+  .login {
+    margin-right: 0%;
+    width: 100%;
+    margin-bottom: 5%;
   }
-
-
+}
