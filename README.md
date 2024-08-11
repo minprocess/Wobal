@@ -92,3 +92,9 @@ To perform a test, please make sure the dependencies are installed. Once you hav
 Please contact us via github mdis928, alexbradshaw, minprocess
 
 ## Future changes
+*** Store files in S3 bucket with a randomly generated name so that there will be no file name collisions as a result of two people saving files with same name
+*** Limit number of files saved in S3 bucket to prevent someone from maliciously uploading a lot of files
+*** Doesn't work in Chrome
+*** Allow multiple images to be added to a post.
+*** Network tab in Inspect does not show activity
+*** Folder on S3 for each user 
